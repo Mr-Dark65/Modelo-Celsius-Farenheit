@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "cd django_front && python manage.py migrate --noinput && gunicorn django_front.wsgi:application --bind 0.0.0.0:$PORT",
+    "startCommand": "cd django_front && python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn django_front.wsgi:application --bind 0.0.0.0:$PORT",
     "numReplicas": 1
   }
 }
