@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conversor °C → °F</title>
+    <link rel="stylesheet" href="{% static 'front/css/styles.css' %}" />
+    <script src="{% static 'front/js/app.js' %}" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1>Conversor de Temperaturas con IA</h1>
+        <p class="subtitle">
+          Escribe una temperatura en grados Celsius para predecir Fahrenheit usando el modelo de red neuronal.
+        </p>
+        <form id="predict-form">
+          <label for="celsius-input">Temperatura °C</label>
+          <input
+            id="celsius-input"
+            name="celsius"
+            type="number"
+            step="any"
+            placeholder="Ej. 24"
+            required
+          />
+          <button type="submit" class="primary-btn">Predecir</button>
+        </form>
+        <article id="result" class="result hidden">
+          <span class="tag">Predicción °F</span>
+          <strong id="fahrenheit-output">--</strong>
+        </article>
+        <article id="status" class="status">
+          <span class="dot loading"></span>
+          <span id="status-text">Conectando con el servidor...</span>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>TensorFlow · Conversión °C a °F</p>
+    </footer>
+  </body>
+</html>
+
+
