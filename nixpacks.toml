@@ -2,7 +2,7 @@
 nixPkgs = ["python310", "gcc"]
 
 [phases.install]
-cmds = ["cd django_front && pip install -r requirements.txt"]
+cmds = ["pip install -r django_front/requirements.txt"]
 
 [phases.build]
 cmds = ["cd django_front && python manage.py collectstatic --noinput"]
