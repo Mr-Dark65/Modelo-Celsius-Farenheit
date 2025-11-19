@@ -1,0 +1,8 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd django_front && pip install -r requirements.txt && python manage.py collectstatic --noinput"
+
+[deploy]
+startCommand = "cd django_front && python manage.py migrate --noinput && gunicorn django_front.wsgi --bind 0.0.0.0:$PORT"
+healthcheckPath = "/"
+restartPolicyType = "on-failure"
